@@ -1,0 +1,81 @@
+#+TITLE: Emacs Config
+
+* General
+#+BEGIN_SRC emacs-lisp
+  (require 'use-package-ensure)
+  (setq use-package-always-ensure t)
+  (use-package auto-compile
+    :config (auto-compile-on-load-mode))
+
+  (setq load-prefer-newer t)
+
+  (setq make-backup-files nil)
+  (setq auto-save-default nil)
+  (defalias 'yes-or-no-p 'y-or-n-p)
+  (show-paren-mode 1)
+  (setq show-paren-style 'parenthesis)
+  (column-number-mode nil) 
+#+END_SRC
+* GUI
+#+BEGIN_SRC emacs-lisp
+(setq inhibit-startup-message t)
+(menu-bar-mode 0)
+(scroll-bar-mode -1)
+(tool-bar-mode 0)
+(set-window-scroll-bars (minibuffer-window) nil nil)
+(tooltip-mode -1)
+(setq visible-bell -1)
+#+END_SRC
+
+* Fonts
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'default-frame-alist '(font . "Source Code Pro"))
+#+END_SRC
+
+* Themes
+#+BEGIN_SRC emacs-lisp
+  (use-package solarized-theme
+    :ensure t)
+  (use-package base16-theme
+    :ensure t)
+  (load-theme 'solarized-dark t)
+#+END_SRC
+* Flycheck
+#+BEGIN_SRC emacs-lisp
+(use-package flycheck
+  :init (global-flycheck-mode))
+#+END_SRC
+* Org
+#+BEGIN_SRC emacs-lisp
+  (setq initial-major-mode 'org-mode)
+  (setq org-ellipsis "⤵")
+  (setq org-src-fontify-natively t)
+  (setq org-src-tab-acts-natively t)
+  (setq org-src-window-setup 'current-window)
+  (use-package org-bullets
+    :ensure t
+    :init
+    (add-hook 'org-mode-hook 'org-bullets-mode))
+#+END_SRC
+* LaTeX
+#+BEGIN_SRC emacs-lisp
+  (setq TeX-PDF-mode t)
+  (setq TeX-auto-save nil)
+  (setq TeX-parse-self t)
+  (setq-default TeX-master nil)
+  ;;(latex-preview-pane-enable)
+#+END_SRC
+* PDF-Tools
+#+BEGIN_SRC emacs-lisp
+
+  ;;(use-package pdf-tools
+  ;;  :ensure t
+  ;;  :config
+  ;;  (pdf-tools-install))
+
+#+END_SRC
+* Magit
+#+BEGIN_SRC emacs-lisp
+  (use-package magit
+    :ensure t)
+#+END_SRC
