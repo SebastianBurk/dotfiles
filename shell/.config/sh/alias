@@ -1,0 +1,25 @@
+#!/bin/sh
+
+alias sudo="sudo "
+
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias rm="rm -iv"
+
+alias cdp="cd .."
+alias cdh="cd ~/"
+
+alias ls="ls --color=auto --group-directories-first"
+alias la="ls -a --color=auto --group-directories-first"
+alias ll="ls -lah --color=auto --group-directories-first"
+alias grep="grep --color=auto"
+alias diff="diff --color=auto"
+
+alias df="df -h"
+alias free="free -h"
+
+alias sys-poweroff="sudo systemctl poweroff"
+alias sys-reboot="sudo systemctl reboot"
+alias sys-update="sudo apt update && sudo apt upgrade"
+
+alias texlive-update="tlmgr update --self && tlmgr update --all"
