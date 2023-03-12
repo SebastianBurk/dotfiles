@@ -1,0 +1,16 @@
+#!/bin/sh
+
+[[ -s "$HOME/.config/bash/bashrc" ]] && . "$HOME/.config/bash/bashrc"
+
+[[ -d "$HOME/bin" ]] && export PATH="$PATH:$HOME/bin"
+[[ -d "$HOME/.local/bin" ]] && export PATH="$PATH:$HOME/.local/bin"
+
+# XDG
+#[[ -d "$HOME/.config" ]] && export XDG_CONFIG_HOME="$HOME/.config"
+#[[ -d "$HOME/.cache" ]] && export XDG_CACHE_HOME="$HOME/.cache"
+#[[ -d "$HOME/.local/share" ]] && export XDG_DATA_HOME="$HOME/.local/share"
+
+# TeX Live
+[[ -d "$HOME/.local/share/texlive/2020/bin/x86_64-linux" ]] &&  export PATH="$PATH:$HOME/.local/share/texlive/2020/bin/x86_64-linux"
+[[ -d "$HOME/.local/share/texlive/2020/texmf-dist/doc/man" ]] && export  MANPATH="$MANPATH:$HOME/.local/share/texlive/2020/texmf-dist/doc/man"
+[[ -d "$HOME/.local/share/texlive/2020/texfm-dist/doc/info" ]] && export INFOPATH="$INFOPATH:$HOME/.local/share/texlive/2020/texfm-dist/doc/"
